@@ -9,6 +9,29 @@ const listInput = document.querySelector('.listInput');
 const myListButton = document.querySelector('.myListButton');
 const myRemoveButton = document.querySelector('.myRemoveButton');
 
+const listItemsLi = document.getElementsByTagName('li');
+const listItemsUl = document.querySelector('ul');
+
+// for (let i = 0; i < listItemsLi.length; i++) {
+// 	listItemsLi[i].addEventListener('mouseover', () => {
+// 		listItemsLi[i].textContent = listItemsLi[i].textContent.toUpperCase();
+// 	});
+// 	listItemsLi[i].addEventListener('mouseout', () => {
+// 		listItemsLi[i].textContent = listItemsLi[i].textContent.toLowerCase();
+// 	});
+// }
+
+listItemsUl.addEventListener('mouseover', (event) => {
+	if (event.target.tagName === 'LI') {
+		event.target.textContent = event.target.textContent.toUpperCase();
+	}
+});
+listItemsUl.addEventListener('mouseout', (event) => {
+	if (event.target.tagName === 'LI') {
+		event.target.textContent = event.target.textContent.toLowerCase();
+	}
+});
+
 button.addEventListener('click', () => {
 	p.innerHTML = input.value + ':';
 	input.value = '';
